@@ -20,8 +20,8 @@ public class AutorServiceImpl implements AuthorService {
     private AuthorRepository authorRepository;
     private BookRepository bookRepository;
 
-    public AutorServiceImpl(AuthorRepository autorRepository, BookRepository bookRepository) {
-        this.authorRepository = autorRepository;
+    public AutorServiceImpl(AuthorRepository authorRepository, BookRepository bookRepository) {
+        this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
     }
 

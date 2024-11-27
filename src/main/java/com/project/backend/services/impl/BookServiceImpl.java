@@ -22,11 +22,11 @@ public class BookServiceImpl implements BookService {
     private BookRepository bookRepository;
     private AuthorRepository authorRepository;
 
-    public BookServiceImpl(CategoryRepository categoryRepository, BookRepository bookRepository) {
+    public BookServiceImpl(CategoryRepository categoryRepository, BookRepository bookRepository, AuthorRepository authorRepository) {
         this.categoryRepository = categoryRepository;
         this.bookRepository = bookRepository;
+        this.authorRepository = authorRepository;
     }
-
 
     @Override
     public List<BookEntity> getAllBooks() {
