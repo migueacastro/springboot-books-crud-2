@@ -17,6 +17,6 @@ public class BookDto {
     private String name;
     private String description;
     private CategoryDto category;
-    private Set<AuthorDto> authors;
+    private Set<Long> authors;
 
 }

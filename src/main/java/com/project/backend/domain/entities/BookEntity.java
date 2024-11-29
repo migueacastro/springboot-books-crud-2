@@ -1,11 +1,14 @@
 package com.project.backend.domain.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 import java.util.Set;
 
 @Data
@@ -32,4 +35,13 @@ public class BookEntity {
             inverseJoinColumns = @JoinColumn(name = "author_id",  referencedColumnName = "id")
     )
     Set<AuthorEntity> authors;
+
+    @Override public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BookEntity that = (BookEntity) o;
+        return Objects.equals(id, that.id); }
+    @Override public int hashCode() {
+        return Objects.hash(id);
+    }
 }
